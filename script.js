@@ -12,6 +12,7 @@ addForm.addEventListener("click", function (e) {
         listItem.append(button);
         todoList.append(listItem);
     }
+    localStorage.setItem("todoListInfo", JSON.stringify(todoList.innerHTML));
 })
 
 todoList.addEventListener("click", function(e) {
@@ -21,4 +22,9 @@ todoList.addEventListener("click", function(e) {
     } else if (targetItem.tagName === "LI") {
         targetItem.classList.toggle("done");
     }
+    localStorage.setItem("todoListInfo", JSON.stringify(todoList.innerHTML));
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+    todoList.innerHTML = JSON.parse(localStorage.todoListInfo);
 })
