@@ -13,3 +13,12 @@ addForm.addEventListener("click", function (e) {
         todoList.append(listItem);
     }
 })
+
+todoList.addEventListener("click", function(e) {
+    let targetItem = e.target;
+    if(targetItem.tagName === "BUTTON") {
+        targetItem.parentElement.remove();
+    } else if (targetItem.tagName === "LI") {
+        targetItem.classList.toggle("done");
+    }
+})

@@ -1,0 +1,8 @@
+li:hover {
+    text-decoration: line-through;
+}
+
+.done {
+    color: gray;
+    text-decoration: line-through;
+}
